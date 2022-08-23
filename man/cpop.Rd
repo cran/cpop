@@ -21,7 +21,7 @@ cpop(
 
 \item{grid}{An ordered vector of possible locations for the change points. If this is NULL, then this is set to x, the vector of times/locations of the data points.}
 
-\item{beta}{A positive real value for the penalty incurred for adding a changepoint (prevents over-fitting).}
+\item{beta}{A positive real value for the penalty incurred for adding a changepoint (prevents over-fitting). Default value is \code{2*log(length(y))}.}
 
 \item{sd}{Estimate of residual standard deviation. Can be a single numerical value or a vector of values for the case of varying standard deviation. Default value is 1.}
 
@@ -69,14 +69,14 @@ library(cpop)
 # simulate data with change in gradient
 set.seed(1)
 x <- (1:50/5)^2
-y <- simulate(x,changepoints=c(10,50),change.slope=c(0.25,-0.25),sigma=1)
+y <- simchangeslope(x,changepoints=c(10,50),change.slope=c(0.25,-0.25),sd=1)
 # analyse using cpop
 res <- cpop(y,x)
 p <- plot(res)
 print(p)
  
 # generate the "true" mean
-mu <- simulate(x,changepoints=c(10,50),change.slope=c(0.25,-0.25),sigma=0)
+mu <- simchangeslope(x,changepoints=c(10,50),change.slope=c(0.25,-0.25),sd=0)
 # add the true mean to the plot
 library(pacman)
 p_load(ggplot2)
@@ -85,16 +85,16 @@ print(p)
 
 # heterogeneous data
 set.seed(1)
-sigma <- (1:50)/25
-y <- simulate(x,changepoints=c(10,50),change.slope=c(0.25,-0.25),sigma=sigma)
+sd <- (1:50)/25
+y <- simchangeslope(x,changepoints=c(10,50),change.slope=c(0.25,-0.25),sd=sd)
 
 # analysis assuming constant noise standard deviation
-res <- cpop(y,x,beta=2*log(length(y)),sd=sqrt(mean(sigma^2)))
+res <- cpop(y,x,beta=2*log(length(y)),sd=sqrt(mean(sd^2)))
 p <- plot(res)
 print(p)
 
 # analysis with the true noise standard deviation
-res.true <- cpop(y,x,beta=2*log(length(y)),sd=sigma)
+res.true <- cpop(y,x,beta=2*log(length(y)),sd=sd)
 p <- plot(res.true)
 print(p)
 
