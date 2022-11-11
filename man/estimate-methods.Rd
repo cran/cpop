@@ -3,10 +3,7 @@
 \name{estimate}
 \alias{estimate}
 \alias{estimate,cpop.class-method}
-\title{A function for estimating the fit of a cpop model}
-\usage{
-estimate(object, x = object@x, ...)
-}
+\title{Estimate the fit of a cpop model}
 \arguments{
 \item{object}{An instance of an S4 class produced by \code{\link{cpop}}.}
 

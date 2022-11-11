@@ -3,10 +3,7 @@
 \name{cost}
 \alias{cost}
 \alias{cost,cpop.class-method}
-\title{A function for calculating the cost of a model fitted by cpop}
-\usage{
-cost(object)
-}
+\title{Calculate the cost of a model fitted by cpop}
 \arguments{
 \item{object}{An instance of an S4 class produced by \code{\link{cpop}}.}
 }
@@ -14,7 +11,7 @@ cost(object)
 Numerical value of the penalised cost associated with the segmentations determined by using \code{\link{cpop}}
 }
 \description{
-Calculates the penalised cost of a model fitted by cpop using the residual sum of squares and the penalty values.
+Calculate the penalised cost of a model fitted by cpop using the residual sum of squares and the penalty values.
 }
 \examples{
 library(cpop)
