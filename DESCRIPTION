@@ -1,8 +1,8 @@
 Package: cpop
 Type: Package
 Title: Detection of Multiple Changes in Slope in Univariate Time-Series
-Version: 1.0.4
-Date: 2022-11-11
+Version: 1.0.6
+Date: 2022-11-21
 Maintainer: Daniel Grose <dan.grose@lancaster.ac.uk>
 Authors@R: c(person("Daniel", "Grose", role = c("aut", "cre"),email = "dan.grose@lancaster.ac.uk"),
              person("Paul", "Fearnhead", role = "aut",email = "p.fearnhead@lancaster.ac.uk"))
@@ -16,8 +16,8 @@ RoxygenNote: 7.1.2
 RdMacros: Rdpack,mathjaxr
 VignetteBuilder: R.rsp
 NeedsCompilation: yes
-Packaged: 2022-11-11 14:50:15 UTC; grosedj
+Packaged: 2022-11-21 11:32:41 UTC; grosedj
 Author: Daniel Grose [aut, cre],
   Paul Fearnhead [aut]
 Repository: CRAN
-Date/Publication: 2022-11-11 15:30:05 UTC
+Date/Publication: 2022-11-21 14:40:02 UTC

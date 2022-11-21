@@ -1,5 +1,14 @@
 #  **News**
 
+
+## cpop 1.0.6
+
+- Updated vignettes to be consistent with article submitted to the Journal of Statistical Software.
+
+## cpop 1.0.5
+
+- Use message to return messages instead of cat.
+
 ## cpop 1.0.4
 
 - Added NEWS.md
@@ -11,7 +20,6 @@
 - Improved documentation of cpop method
 - Changed default value of sd in cpop to be data dependent
 - Fixed error in estimate function
-- Improvements to package vignettes based upon comments and feedback from Journal of Statistical Software
 
 ##  cpop 1.0.3 
 
