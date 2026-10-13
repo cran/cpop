@@ -22,6 +22,9 @@ cpop.class<-function(y,x,beta,sd,changepoints)
 #'
 #' @description Calculate the penalised cost of a model fitted by cpop using the residual sum of squares and the penalty values.
 #'
+#'
+#' @usage cost(object)
+#'
 #' @param object An instance of an S4 class produced by \code{\link{cpop}}.
 #'
 #' @return Numerical value of the penalised cost associated with the segmentations determined by using \code{\link{cpop}}   
@@ -279,7 +282,7 @@ setMethod("summary",signature=list("cpop.class"),function(object)
 #' @references \insertRef{cpop-jss-article-2024}{cpop}
 #'
 #' @export
-if(!isGeneric("show")) {setGeneric("show",function(object) {standardGeneric("show")})}
+# if(!isGeneric("show")) {setGeneric("show",function(object) {standardGeneric("show")})}
 setMethod("show",signature=list("cpop.class"),function(object)
 {
     summary(object)
@@ -352,12 +355,14 @@ setMethod("fitted",signature=list("cpop.class"),
 #'
 #' @docType methods
 #'
-#' @rdname changepoints-methods
+#' @usage changepoints(object)
 #'
 #' @param object  An instance of an cpop S4 class produced by \code{\link{cpop}}.
 #' 
 #' @return A data frame.
-#' 
+#'
+#' @rdname changepoints-methods
+#'
 #' @aliases changepoints,cpop.class-method
 #'
 #' @examples
@@ -564,6 +569,9 @@ estimate.util <- function(object,x)
 #'
 #' @description Estimates the fit of a cpop model at the specified locations. If no locations are specified it evaluates the estimates
 #' at the locations specified when calling \code{\link{cpop}}. 
+#'
+#'
+#' @usage estimate(object,x,...)
 #'
 #' @param object An instance of an S4 class produced by \code{\link{cpop}}.
 #' @param x Locations at which the fit is to be estimated. Default value is the x locations at which the cpop object was defined.
